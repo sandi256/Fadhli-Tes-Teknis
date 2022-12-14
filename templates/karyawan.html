@@ -7,13 +7,6 @@
     <title>{{heading}}</title>
 </head>
 <body>
-    <h1>{{heading}}</h1>
-    <form action="" method="post">
-        {% csrf_token %}
-        <table>
-            {{form}}
-        </table>
-        <button type="submit">Submit</button>
-    </form>
+    <h1>Hello {{user}}</h1>
 </body>
 </html>

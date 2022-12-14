@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{user}}</title>
+</head>
+<body>
+    <h1>Hello {{user}}</h1>
+    <p>ini admin</p>
+    <ul>
+        <li>
+            <a href="{% url 'create' %}">Create</a>
+        </li>
+    </ul>
+    <table>
+        <tr>
+            <th>Nama</th><th>Email</th><th>Posisi</th><th>Edit</th>
+        </tr>
+        {% for karyawan in data %}
+        <tr>
+            <td>{{karyawan.username}}</td><td>{{karyawan.email}}</td><td>{{karyawan.groups.get}}</td><td><a href="{% url 'delete' karyawan.id %}">Delete</a></td><td><a href="{% url 'update' karyawan.id %}">Update</a></td>
+        </tr>
+        {% endfor %}
+        </table>
+</body>
+</html>
