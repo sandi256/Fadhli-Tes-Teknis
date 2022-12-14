@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,12 @@
     <title>{{heading}}</title>
 </head>
 <body>
-    <h1>Hello {{role}}</h1>
-    <p>Ini Karyawan</p>
+    <h1>Profile {{role}}</h1>
+    <p>Username {{karyawan}}</p>
+    <p>Umur {{umur}}</p>
+    <p>Email {{user.email}}</p>
+    <img src="{{ img }}" alt="">
+    <a href="{% url 'karyawan_update' user.id %}">Update</a>
+    <a href="{% url 'logout'%}">Logout</a>
 </body>
 </html>
