@@ -4,4 +4,6 @@ A. Mengaktifkan Env
     2. cd Env/Scripts
     3. activate
 
-B. 
+B.
+Tugas
+Clean data
