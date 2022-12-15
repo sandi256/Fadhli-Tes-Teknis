@@ -2,9 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import Group, User
 from karyawan.models import KaryawanModels
 from karyawan.forms import KaryawanForms
-from .forms import FormKaryawan,FormBaru
+from .forms import FormKaryawan
 from django.contrib.auth import logout
-from django.contrib.auth.decorators import user_passes_test
 # Create your views here.
 
 def admin(request):
@@ -35,7 +34,6 @@ def updateData(request, update_id):
     return render(request, "manager/create.html",context)
 
 def createData(request):
-    print(request.user in User.objects.all())
     modelKaryawan = KaryawanForms(request.POST or None)
     form = FormKaryawan(request.POST or None)
     context = {

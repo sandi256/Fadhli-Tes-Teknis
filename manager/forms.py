@@ -13,8 +13,3 @@ class FormKaryawan(forms.Form):
         if data in User.objects.all():
             raise forms.ValidationError(f"{data} sudah ada")
         return data
-
-class FormBaru(forms.ModelForm):
-    class Meta:
-        model = EditUser
-        fields = '__all__'

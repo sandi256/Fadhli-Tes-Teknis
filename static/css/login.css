@@ -1,0 +1,40 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+body{
+    height: 100%;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+h1.heading{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 14px;
+    grid-row: 1;
+    grid-column: 2;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    height: 100%;
+    grid-column: 2;
+    grid-row: 2;
+}
+input.id.username.form-control{
+    min-width: 207px;
+    max-width: 207px;
+}
+@media (max-width: 600px) {
+    body{
+      grid-template-columns: auto;
+      grid-template-rows: auto;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+    }
+  }
