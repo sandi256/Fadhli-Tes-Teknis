@@ -24,7 +24,7 @@ a.btn.btn-light{
 .btn_logout{
     display: flex;
     justify-content: right;
-    margin: 14px;
+    margin: 15px;
 }
 
 a.btn.btn-outline-dark{
