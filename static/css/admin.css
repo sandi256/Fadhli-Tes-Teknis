@@ -1,0 +1,65 @@
+/* heading and navbar */
+body{
+    height: 700px;   
+}
+h1.heading, h2{
+    margin: 14px;
+    display: flex;
+    justify-content: center;
+}
+h2{
+    margin-top: 50px;
+}
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+}
+
+a.btn.btn-light{
+    padding: 10px 15px;
+}
+
+.btn_logout{
+    display: flex;
+    justify-content: right;
+    margin: 14px;
+}
+
+a.btn.btn-outline-dark{
+    margin-left: 14px;
+}
+
+li{
+    margin: 0px;
+    margin-left: 14px;
+}
+
+a{
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+}
+
+/* List Karyawan */
+
+.table-responsive{
+    display: flex;
+    justify-content: center;
+}
+
+#table_admin{
+    display: flex;
+    justify-content: center;
+}
+th{
+    text-align: center;
+    width: fit-content;
+}
+
+
+/* Form */
+table, button.btn.btn-success{
+    margin-left: 14px;
+}

@@ -1,19 +1,40 @@
+{% extends 'base_karyawan.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{heading}}</title>
-</head>
-<body>
-    <h1>Profile {{role}}</h1>
-    <p>Username {{karyawan}}</p>
-    <p>Umur {{umur}}</p>
-    <p>Email {{user.email}}</p>
-    <img src="{{ img }}" alt="">
-    <a href="{% url 'karyawan_update' user.id %}">Update</a>
-    <a href="{% url 'logout'%}">Logout</a>
+{% block title %}
+<title>{{heading}}</title>
+{% endblock title %}
+{% block css %}
+<link rel="stylesheet" href=" {% static 'css/karyawan.css' %} ">
+{% endblock css %}
+{% block heading %}
+<h1 style="margin-top: 25px;" class="heading">{{heading}}</h1>
+{% endblock heading %}
+{% block content %}
+<div class="logout" style="display: flex;justify-content: end; margin-right: 14px;">
+    <a class="btn btn-outline-dark" href="{% url 'logout'%}" sty>Logout</a>
+</div>
+
+<div class="container" style="min-width: 100%;width: 100%;margin: 0px;padding: 0px;justify-content:center ;align-items: center;display: flex;">
+    <div class="col-sm-12" style="display: flex;justify-content: center;align-items: center;">
+        <div class="card">
+            <img src="{{img}}" style="width: 150px;height: fit-content;" alt="Profile picture">
+            <div class="card-body">
+                <h3 class="card-title">{{karyawan.username}}</h3>
+                <p class="card-text">Bio goes here...</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Alamat : {{alamat}}</li>
+                    <li class="list-group-item">{{karyawan.email}}</li>
+                    <li class="list-group-item">Phone: +62{{telepon}}</li>
+                    <li class="list-group-item"><a id="update" href="{% url 'karyawan_update' user.id %}">Update</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+
 </body>
+
 </html>

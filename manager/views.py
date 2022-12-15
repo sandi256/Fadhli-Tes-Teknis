@@ -11,7 +11,7 @@ def admin(request):
     data = User.objects.all()
     context = {
         "data":data,
-        "Heading":"Manager"
+        "heading":"Manager"
     }
     return render(request,"manager/admin.html",context)
 
@@ -35,6 +35,7 @@ def updateData(request, update_id):
     return render(request, "manager/create.html",context)
 
 def createData(request):
+    print(request.user in User.objects.all())
     modelKaryawan = KaryawanForms(request.POST or None)
     form = FormKaryawan(request.POST or None)
     context = {
@@ -49,14 +50,16 @@ def createData(request):
                     password = request.POST['password'],
                     email = request.POST['email'],
                 )
-                karyawan.groups.add(2)
-                modelKaryawan.save()
-                karyawan.save()
-
-                #Menambah posisi
-                return redirect("manager")
+                if karyawan.username in User.objects.all():
+                    redirect("create")
+                else:
+                    karyawan.groups.add(2)
+                    modelKaryawan.save()
+                    karyawan.save()
+                    return redirect("manager")
             else:
                 return redirect("create")
+
     return render(request,'manager/create.html',context)
 
 def deleteData(request, delete_id):

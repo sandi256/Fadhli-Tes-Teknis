@@ -9,12 +9,15 @@ def karyawan(request):
     role = User.objects.get(username = request.user).groups.get()
     username = User.objects.get(id=request.user.id)
     karyawan = KaryawanModels.objects.get(username = username)
-    print(karyawan)
+    print(karyawan.telepon)
     context = {
+        "heading":"Profile Karyawan",
         "role":role,
         "karyawan":username,
         "umur":karyawan.umur,
-        "img":karyawan.img
+        "alamat":karyawan.alamat,
+        "telepon":karyawan.telepon,
+        "img":karyawan.img,
     }
     return render(request,"karyawan/karyawan.html",context)
 
