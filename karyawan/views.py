@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import KaryawanModels
-from .forms import KaryawanForms
+from .forms import KaryawanForms, addImage
 from django.contrib.auth.models import Group, User
 
 # Create your views here.
@@ -26,15 +26,18 @@ def update(request, update_id):
         "umur":dataKaryawan.umur,
         "email":dataKaryawan.email,
     }
-    form = KaryawanForms(request.POST or None,request.FILES, initial=data, instance=dataKaryawan)
+    form = KaryawanForms(request.POST or None, initial=data, instance=dataKaryawan)
+    image = addImage(request.POST or None ,request.FILES, initial=data, instance=dataKaryawan)
     context = {
         "heading":"Update",
-        "form":form
+        "form":form,
+        "img":image
     }
     if request.method == "POST":
         if form.is_valid():
             karyawan.username = request.POST['username']
             karyawan.save()
+            image.save()
             form.save()
             return redirect("karyawan")
         else:

@@ -4,4 +4,9 @@ from .models import KaryawanModels
 class KaryawanForms(forms.ModelForm):
     class Meta:
         model = KaryawanModels
-        fields = '__all__'
+        fields = ['username','umur','email']
+
+class addImage(forms.ModelForm):
+    class Meta:
+        model = KaryawanModels
+        fields = ['img']

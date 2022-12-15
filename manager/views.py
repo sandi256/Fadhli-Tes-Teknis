@@ -44,12 +44,13 @@ def createData(request):
     if request.method == "POST":
         if form.is_valid():
             if request.POST['password'] == request.POST['confirmation']:
-                karyawan = User.objects.create(
+                karyawan = User.objects.create_user(
                     username = request.POST['username'],
                     password = request.POST['password'],
                     email = request.POST['email'],
                 )
                 karyawan.groups.add(2)
+                modelKaryawan.save()
                 karyawan.save()
 
                 #Menambah posisi
