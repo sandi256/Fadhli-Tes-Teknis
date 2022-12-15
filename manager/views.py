@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import Group, User
 from karyawan.models import KaryawanModels
-from karyawan.forms import KaryawanForms
+from karyawan.forms import KaryawanForms,createKaryawan
 from .forms import FormKaryawan
 from django.contrib.auth import logout
 # Create your views here.
@@ -34,7 +34,7 @@ def updateData(request, update_id):
     return render(request, "manager/create.html",context)
 
 def createData(request):
-    modelKaryawan = KaryawanForms(request.POST or None)
+    modelKaryawan = createKaryawan(request.POST or None)
     form = FormKaryawan(request.POST or None)
     context = {
         "heading":"Create",
@@ -51,8 +51,8 @@ def createData(request):
                 if karyawan.username in User.objects.all():
                     redirect("create")
                 else:
-                    karyawan.groups.add(2)
                     modelKaryawan.save()
+                    karyawan.groups.add(2)
                     karyawan.save()
                     return redirect("manager")
             else:

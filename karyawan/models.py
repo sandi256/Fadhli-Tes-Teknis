@@ -8,7 +8,7 @@ class KaryawanModels(models.Model):
     email = models.EmailField(null=True)
     alamat = models.CharField(max_length=50, null=True)
     telepon = models.CharField(max_length=15, null=True)
-    img = models.ImageField(null=True, blank=True, upload_to='static/img/')
+    img = models.ImageField(null=True, blank=True, upload_to='static/img/', default='static/img/user.png')
 
     update = models.DateTimeField(auto_now=True)
     create = models.DateTimeField(auto_now_add=True)

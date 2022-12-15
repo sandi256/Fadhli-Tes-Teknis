@@ -9,11 +9,11 @@ Tugas
 Clean data
 
 requirement
-altgraph                      0.17.3
-amqp                          2.6.1
-asgiref                       3.5.2
-astroid                       2.5
-asttokens                     2.0.8
+altgraph==0.17.3
+amqp==2.6.1
+asgiref==3.5.2
+astroid==2.5
+asttokens==2.0.8
 autopep8                      1.5.3
 backcall                      0.2.0
 billiard                      3.6.4.0
@@ -68,7 +68,7 @@ markdown2                     2.4.5
 MarkupSafe                    2.1.1
 matplotlib-inline             0.1.6
 mccabe                        0.6.1
-mysqlclient                   2.1.1
+mysqlclient==2.1.1
 nest-asyncio                  1.5.5
 nexmo                         2.2.0
 numpy                         1.23.2
@@ -79,7 +79,7 @@ packaging                     21.3
 parso                         0.8.3
 pefile                        2022.5.30
 pickleshare                   0.7.5
-Pillow                        8.4.0
+Pillow==8.4.0
 pip                           22.3.1
 platformdirs                  2.5.2
 prompt-toolkit                3.0.30

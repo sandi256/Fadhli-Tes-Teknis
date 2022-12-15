@@ -2,6 +2,11 @@ from django import forms
 from .models import KaryawanModels
 from django.contrib.auth.models import User
 
+class createKaryawan(forms.ModelForm):
+    class Meta:
+        model = KaryawanModels
+        fields = ['username','email']
+
 class KaryawanForms(forms.ModelForm):
     class Meta:
         model = KaryawanModels
